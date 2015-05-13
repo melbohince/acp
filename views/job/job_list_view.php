@@ -7,9 +7,9 @@
 
 <table class="grid">
   <tr> 
-    <th>START<sup>1</sup></th>
+    <!--<th>START<sup>1</sup></th>-->
     <th>WANT</th> 
-    <th>ACTUAL</th>
+    <!--<th>ACTUAL</th>-->
     <th>JOBIT</th>
   </tr>
  
@@ -18,13 +18,13 @@
   <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
 
  <?php if($row->date_planned != '0000-00-00'):?>
-    <td><?=date("m/d/y",strtotime($row->date_planned));?></td> 
+   <!-- <td><?=date("m/d/y",strtotime($row->date_planned));?></td> -->
 <?php else:?>
-    <td>tbd</td> 
+    <!--<td>tbd</td> -->
 <?php endif?>
 
     <td><?=number_format($row->qty_want);?></td>
-    <td><?=number_format($row->qty_actual);?></td>
+    <!--<td><?=number_format($row->qty_actual);?></td>-->
     <td><?=$row->ams_ref;?></td>
   </tr>
 
