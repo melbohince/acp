@@ -21,7 +21,7 @@ class Menu extends CI_Controller {
 		$this->template = $this->session->userdata('template'); 
 		$this->lang->load('pages', $this->session->userdata('use_language')); 
 		
-		$this->access_level = (($this->session->userdata('admin') == 1) ? 'ADMIN' : 'USER');
+		$this->access_level = (($this->session->userdata('admin') > 1) ? 'ADMIN' : 'USER');
 		$this->user_name = $this->session->userdata('username');
 		$this->access_filter = $this->session->userdata('access_filter');
 		$this->session->set_userdata(array('prior_uri'  => '','prior_page' => '')); //clear out the doubling back setup

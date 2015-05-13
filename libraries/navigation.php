@@ -10,7 +10,7 @@ class Navigation {
 		$this->obj =& get_instance();
 	
 		$this->obj->lang->load('pages', $this->obj->session->userdata('use_language')); 
-		$this->obj->access_level = (($this->obj->session->userdata('admin') == 1) ? 'ADMIN' : 'USER');
+		$this->obj->access_level = (($this->obj->session->userdata('admin') > 1) ? 'ADMIN' : 'USER');
 		$this->obj->wms_mgr = (($this->obj->session->userdata('wms_mgr') == 1) ? 'YES' : 'NO');
 	}
 	
@@ -23,13 +23,14 @@ class Navigation {
     $menu .= "<li>".anchor('menu/warehouse', $this->obj->lang->line('m_warehouse'))."</li>";
     //$menu .= "<li>".anchor('menu/settings', $this->obj->lang->line('m_settings'))."</li>";
     if($this->obj->access_level == 'ADMIN')
-		{
+    {
   		$menu .= "<li>".anchor('menu/administration', $this->obj->lang->line('m_administration'))."</li>";
     }
-		$menu .= "<li>".anchor('help', $this->obj->lang->line('m_help'))."</li>";
-		//$menu .= "<li>&nbsp</li>";
-		//$menu .= '<li><a href="http://www.arkay.com">Arkay Website</a></li>';
-    $menu .= "</ul></div>";
+	
+    $menu .= "<li>".anchor('help', $this->obj->lang->line('m_help'))."</li>";
+        //$menu .= "<li>&nbsp</li>";
+        //$menu .= '<li><a href="http://www.arkay.com">Arkay Website</a></li>';
+        $menu .= "</ul></div>";
     
     return $menu; 
   }
@@ -53,14 +54,16 @@ class Navigation {
     $menu = '<div id="navlist"><ul>';
 
     $menu .= "<li>".anchor('job/all', $this->obj->lang->line('m_jobs'))."</li>";
-		$menu .= "<li>".anchor('order/open', $this->obj->lang->line('m_orders'))."</li>";
-		$menu .= "<li>".anchor('release/open', $this->obj->lang->line('m_releases'))."</li>";
-		$menu .= "<li>".anchor('release/shipped', $this->obj->lang->line('m_shipments'))."</li>";
-		//if($this->obj->session->userdata('access_filter') != '00120') //$this->obj->access_level == 'ADMIN')
-     $menu .= "<li>".anchor('cpn/can_ship', $this->obj->lang->line('m_can_ship'))."</li>";
-    //endif
-    $menu .= "<li>".anchor('cpn/shortages', $this->obj->lang->line('m_shortages'))."</li>";
-
+		// removed 5/13/15 $menu .= "<li>".anchor('order/open', $this->obj->lang->line('m_orders'))."</li>";
+	$menu .= "<li>".anchor('release/open', $this->obj->lang->line('m_releases'))."</li>";
+	$menu .= "<li>".anchor('release/shipped', $this->obj->lang->line('m_shipments'))."</li>";
+        //if($this->obj->session->userdata('access_filter') != '00120') //$this->obj->access_level == 'ADMIN')
+    $menu .= "<li>".anchor('cpn/can_ship', $this->obj->lang->line('m_can_ship'))."</li>";
+        //endif
+    if($this->obj->session->userdata('admin') > 0)  //arkay emps only
+    {
+         $menu .= "<li>".anchor('cpn/shortages', $this->obj->lang->line('m_shortages'))."</li>";
+    }
     $menu .= "</ul></div>";
 
     return $menu; 
@@ -82,6 +85,7 @@ class Navigation {
 
     return $menu; 
   }
+  
   function settings_menu()
   {
     $menu = '<div id="navlist"><ul>';

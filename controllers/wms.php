@@ -255,7 +255,7 @@ class Wms extends CI_Controller {
 	
 		function update($id)
 	{
-	  /*$this->access_level = (($this->session->userdata('admin') == 1) ? 'ADMIN' : 'USER');
+	  /*$this->access_level = (($this->session->userdata('admin') > 1) ? 'ADMIN' : 'USER');
 	  if($this->access_level != 'ADMIN')
 		{
 			$this->session->set_flashdata('alert', '<div id="alert" class="flash-msg">Access Denied!</div>');

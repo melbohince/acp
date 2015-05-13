@@ -103,7 +103,8 @@ class Login extends CI_Controller {
  
 	function add()
 	{
-	  $this->access_level = (($this->session->userdata('admin') == 1) ? 'ADMIN' : 'USER');
+	  $this->access_level = (($this->session->userdata('admin') > 1) ? 'ADMIN' : 'USER');
+
 	  if($this->access_level != 'ADMIN')
 		{
 			$this->session->set_flashdata('alert', '<div id="alert" class="flash-msg">Access Denied!</div>');
@@ -129,13 +130,13 @@ class Login extends CI_Controller {
 		if ($this->form_validation->run('update_user') == FALSE)
 		{		
   		$this->load->view($this->template, $data);
-  	}
+        }
 		else
 		{
 		  $this->save_user();
-  	}
+        }
   	
-  }
+     }
     
  	function save_user()
 	{
@@ -174,7 +175,7 @@ class Login extends CI_Controller {
   
 	function crud()
 	{
-	  $this->access_level = (($this->session->userdata('admin') == 1) ? 'ADMIN' : 'USER');
+	  $this->access_level = (($this->session->userdata('admin') > 1) ? 'ADMIN' : 'USER');
 	  if($this->access_level != 'ADMIN')
 		{
 			$this->session->set_flashdata('alert', '<div id="alert" class="flash-msg">Access Denied!</div>');
@@ -219,7 +220,7 @@ class Login extends CI_Controller {
 
 	function update($id)
 	{
-	  $this->access_level = (($this->session->userdata('admin') == 1) ? 'ADMIN' : 'USER');
+	  $this->access_level = (($this->session->userdata('admin') > 1) ? 'ADMIN' : 'USER');
 	  if($this->access_level != 'ADMIN')
 		{
 			$this->session->set_flashdata('alert', '<div id="alert" class="flash-msg">Access Denied!</div>');
@@ -269,7 +270,7 @@ class Login extends CI_Controller {
      
 	function delete($id)
 	{
-	  $this->access_level = (($this->session->userdata('admin') == 1) ? 'ADMIN' : 'USER');
+	  $this->access_level = (($this->session->userdata('admin') > 1) ? 'ADMIN' : 'USER');
 	  if($this->access_level != 'ADMIN')
 		{
 			$this->session->set_flashdata('alert', '<div id="alert" class="flash-msg">Access Denied!</div>');
