@@ -30,7 +30,7 @@
      <?php endif;?>
 
      <?php if(!isset($display_logout)): ?>
-  <a class="button" href=<?=base_url().'index.php/login/logout'?>>Logout</a>
+  <a class="button" href=<?=base_url().'index_portal.php/login/logout'?>>Logout</a>
      <?php endif; echo "\n";?>
   </div>
 
