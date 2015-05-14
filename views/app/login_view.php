@@ -72,7 +72,7 @@
 
     <br />
     <br />
-    <p style="style="font-size:90%;"><em>Version beta-20130726.00</em></p>
+    <p style="style="font-size:90%;"><em>Version beta-20150514.00</em></p>
 
 	<?php 
 		form_fieldset_close(); 

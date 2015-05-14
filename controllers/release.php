@@ -117,7 +117,7 @@ class Release extends CI_Controller {
 				$data['content'] = array(
 																		array (
 																			'view' => 'app/message_view',
-																			'data' => 'Here are your recent Shipments:',
+																			'data' => 'Shipments in the past 2 weeks:',
 																		),
 																		
 																		array (
