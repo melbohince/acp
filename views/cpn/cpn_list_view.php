@@ -17,8 +17,8 @@
 
   <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
     <td><?php echo anchor('cpn/show/'.$row->product_code, $row->product_code);?></td> 
-    <td><?=number_format($row->qty_onhand);?></td>
-    <td><?=number_format($row->qty_scheduled);?></td>
+    <td class="rite"><?=number_format($row->qty_onhand);?></td>
+    <td class="rite"><?=number_format($row->qty_scheduled);?></td>
   </tr>
   
   <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">

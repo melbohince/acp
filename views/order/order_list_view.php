@@ -23,8 +23,8 @@
     <td><?=$row->billto;?></td>
     <td><?=$row->po_number;?></td>
     <td><?=$row->product_line;?></td> 
-    <td><?=number_format($row->qty_ordered);?></td> 
-    <td><?=number_format($row->qty_open);?></td> 
+    <td class="rite"><?=number_format($row->qty_ordered);?></td> 
+    <td class="rite"><?=number_format($row->qty_open);?></td> 
     <td><?=$row->date_opened;?></td>
     <td><?=$row->ams_ref;?></td>
   </tr>

@@ -7,7 +7,7 @@
 
 <table class="grid">
   <tr> 
-    <th>WAREHOUSE</th>
+    <th>EXT.WAREHOUSE</th>
     <th>QUANTITY</th>
   </tr>
 
@@ -17,13 +17,13 @@
 
 	  <tr> 		
 	 		<td><strong><?=$row->whse_id;?></strong></td>
-	 		<td><?=number_format($row->qty);?></td>
+	 		<td class"rite"><?=number_format($row->qty);?></td>
 	 	</tr>
 
 	<?php endforeach; ?>
 
 <?php } else { ?>
-			<tr><td colspan=2>No inventory found</td></tr>
+			<tr><td colspan=2>external warehouse not active</td></tr>
 <?php }  ?>	
 	
 </table>

@@ -24,8 +24,8 @@
 <?php else:?>
     <!--<td>tbd</td> -->
 <?php endif?>
-    <td><?=number_format($row->qty_want);?></td> 
-    <!--<td><?=number_format($row->qty_actual);?></td> -->
+    <td class="rite"><?=number_format($row->qty_want);?></td> 
+    <!--<td class="rite"><?=number_format($row->qty_actual);?></td> -->
     <td><?=$row->ams_ref;?></td>
   </tr>
 

@@ -26,13 +26,18 @@
 <?php else:?>
     <td>tbd</td> 
 <?php endif?> 
-    <td><?=number_format($row->qty_actual);?></td>
+    <td class="rite"><?=number_format($row->qty_actual);?></td>
 <?php if($row->date_dock != '0000-00-00'):?>
     <td><?=date("m/d/y",strtotime($row->date_dock));?></td> 
 <?php else:?>
     <td>tbd</td> 
 <?php endif?> 
-    <td><?=number_format($row->qty_sched);?></td>
+
+<?php if($row->qty_sched == $row->qty_actual):?>
+    <td class="rite"><?=number_format($row->qty_sched);?></td>
+<?php else:?>
+    <td class="rite variance"><?=number_format($row->qty_sched);?></td>
+<?php endif?> 
     <td><?php echo anchor('cpn/show/'.$row->product_code, $row->product_code);?></td> 
     <td><?=$row->product_line;?></td> 
     <!--<td><?=$row->ams_ref;?></td> -->

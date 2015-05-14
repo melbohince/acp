@@ -24,7 +24,7 @@
     <td><?=$row->shipto;?></td>
     <td><?php echo anchor('cpn/show/'.$row->product_code, $row->product_code);?></td> 
     <td><?=$row->product_line;?></td> 
-    <td><?=number_format($row->qty_sched);?></td> 
+    <td class="rite"><?=number_format($row->qty_sched);?></td> 
 <?php if($row->date_sched != '0000-00-00'):?>
     <td><?=date("m/d/y",strtotime($row->date_sched));?></td> 
 <?php else:?>

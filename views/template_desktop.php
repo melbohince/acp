@@ -1,27 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>   
+<html lang="en">
+<head>
+    <!-- desktop template 
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title><?=$this->config->item('app_title')?></title>
+    <meta name="webapp prototype" content="">
+    <meta name="Mel Bohince" content="">
 
-<!-- desktop template -->
-<html xmlns="http://www.w3.org/1999/xhtml">
- <head>
-  <title><?=$this->config->item('app_title')?></title>
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="<?=base_url()?>system/application/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>system/application/css/skeleton.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>system/application/css/<?=$style?> "rel="stylesheet" type="text/css"> 
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– 
+    <link rel="icon" type="image/png" href="images/favicon.png"> -->
+    <link rel="icon" type="image/x-icon" href="<?=base_url()?>system/application/favicon.ico">
   
-    <link href="<?=base_url()?>system/application/favicon.ico" rel="icon" type="image/x-icon" />
-    <link href="<?=base_url()?>system/application/css/reset-fonts-grids.css" rel="stylesheet" type="text/css" />
-    <link href="<?=base_url()?>system/application/css/base.css" rel="stylesheet" type="text/css" />
-    <link href="<?=base_url()?>system/application/css/<?=$style?> "rel="stylesheet" type="text/css" />
-
-  <!-- 
+    <!-- Scripts
+    –––––––––––––––––––––––––––––––––––––––––––––––––– 
     <script language="JavaScript" src=<?='"'.base_url().'system/application/cal/calendar_us.js">'?></script> 
-    <link href="<?=base_url()?>system/application/cal/calendar.css" rel="stylesheet" type="text/css" />
-  -->
+    <link href="<?=base_url()?>system/application/cal/calendar.css" rel="stylesheet" type="text/css" >
+    -->
+        
+        
 		
     <?=$refresh; echo "\n";?>
  </head>
 	
 <?php echo "\n";?>
  <body>
-	
+  <!-- Toolbar
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
    <div class="toolbar">
      <h1 id="pageTitle"><?=$page_title?></h1>
 
@@ -34,6 +54,9 @@
      <?php endif; echo "\n";?>
   </div>
 
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
 
 			<?php foreach($content as $segment): ?>
 				<?php $segment_data['data'] = $segment['data'];?>
@@ -42,6 +65,10 @@
 			
 <?php echo "\n";?>
 
+  </div>
+  
+  <!-- Footer
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <?php if($display_footer == "show"): ?>
 <hr/><?php echo "\n";?>
   <div id="footer">

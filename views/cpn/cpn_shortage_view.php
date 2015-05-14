@@ -20,8 +20,8 @@
   <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
     <td><?php echo anchor('cpn/show/'.$row->product_code, $row->product_code);?></td> 
     <td><?=$row->product_line;?></td>
-    <td><?=number_format($row->qty_onhand);?></td>
-    <td><?=number_format($row->qty_open_order);?></td>
+    <td class="rite"><?=number_format($row->qty_onhand);?></td>
+    <td class="rite"><?=number_format($row->qty_open_order);?></td>
     <td><?=$row->packing_spec;?></td>
   </tr>
 

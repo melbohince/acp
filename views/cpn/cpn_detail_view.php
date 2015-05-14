@@ -27,7 +27,7 @@
   	</tr>
   	
   	<tr>
-	    <th>ON HAND</th> <td><strong><?=number_format($row->qty_onhand)?></strong></td> 
+	    <th>ON HAND</th> <td class="rite"><strong><?=number_format($row->qty_onhand)?></strong></td> 
 	    
 	      <?php  if(($row->qty_onhand-$row->qty_scheduled) > 0) { ?>
     	        <td>
@@ -52,11 +52,11 @@
 	  </tr>
 	  
 	  <tr> 
-	    <th>CERTIFICATION</th> <td><strong><?=number_format($row->qty_certification)?></strong></td> <td>&nbsp;</td>
+	    <th>CERTIFICATION</th> <td class="rite"><strong><?=number_format($row->qty_certification)?></strong></td> <td>&nbsp;</td>
     </tr>
 
 	  <tr> 
-	    <th>OPEN JOBS</th> <td><strong><?=number_format($row->qty_wip)?></strong></td> 
+	    <th>OPEN JOBS</th> <td class="rite"><strong><?=number_format($row->qty_wip)?></strong></td> 
       <?php  if($row->qty_wip > 0) { ?>
         <td>
         	        <?=form_open('job/show/'.$row->product_code);?> 
@@ -75,7 +75,7 @@
     </tr>
 
 	  <tr> 
-	    <th>OPEN ORDERS</th> <td><strong><?=number_format($row->qty_open_order)?></strong></td> 
+	    <th>OPEN ORDERS</th> <td class="rite"><strong><?=number_format($row->qty_open_order)?></strong></td> 
 	    <?php  if($row->qty_open_order > 0) { ?>
         <td>
         	        <?=form_open('order/show/'.$row->product_code);?> 
@@ -108,7 +108,7 @@
     </tr>
 
 	  <tr> 
-	    <th>RELEASED</th> <td><strong><?=number_format($row->qty_scheduled)?></strong></td> 
+	    <th>RELEASED</th> <td class="rite"><strong><?=number_format($row->qty_scheduled)?></strong></td> 
 	    <?php  if($row->qty_scheduled > 0) { ?>
         <td>
         	        <?=form_open('release/show/'.$row->product_code);?> 

@@ -49,7 +49,7 @@ class Release_model extends CI_Model {
 
     function show_releases($cpn)
     {
-				$sql = "select product_line, shipto, qty_sched, date_sched, date_dock, ams_ref ";
+				$sql = "select product_line, shipto, qty_sched, date_sched, date_dock, reference ";
 				$sql .= "from releases ";
 				$sql .= "where product_code  = ? "; //add access_filter = 
 				$sql .= "and ( qty_actual is null "; 

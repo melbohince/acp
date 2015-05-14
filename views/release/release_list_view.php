@@ -20,7 +20,7 @@
   <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
     <td><?=$row->product_line;?></td> 
     <td><?=$row->shipto;?></td> 
-    <td><?=number_format($row->qty_sched);?></td> 
+    <td class="rite"><?=number_format($row->qty_sched);?></td> 
     
 <?php if($row->date_sched != '0000-00-00'):?>
     <td><?=date("M jS",strtotime($row->date_sched));?></td> 
