@@ -1,16 +1,16 @@
 <?php
-  // log_message('error', 'form_validation called');
+  // log_message('error', 'form_validation called'); 
   $config = array(
                  'login' => array(
                                     array(
                                             'field' => 'username',
-                                            'label' => 'Username',
-                                            'rules' => 'trim|required|min_length[3]|max_length[25]|xss_clean'
+                                            'label' => 'Email',
+                                            'rules' => 'trim|required|valid_email|max_length[60]|xss_clean'
                                          ),
                                     array(
                                             'field' => 'password',
                                             'label' => 'Password',
-                                            'rules' => 'trim|required|min_length[3]|max_length[16]'
+                                            'rules' => 'trim|required|min_length[6]|max_length[16]'
                                          )
                                     ),
   
@@ -58,7 +58,7 @@
                                     array(
                                             'field' => 'username',
                                             'label' => 'User Name',
-                                            'rules' => 'trim|required|min_length[2]|max_length[20]'
+                                            'rules' => 'trim|required|valid_email|max_length[60]'
                                          ),
                                     array(
                                             'field' => 'password',
@@ -73,7 +73,7 @@
                                     array(
                                             'field' => 'email',
                                             'label' => 'Email Address',
-                                            'rules' => 'trim|required|min_length[7]|max_length[128]|valid_email'
+                                            'rules' => 'trim|required|min_length[7]|max_length[80]|valid_email'
                                          ),
                                     array(
                                             'field' => 'access_filter',

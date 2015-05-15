@@ -52,20 +52,20 @@
      <?php if(!isset($display_logout)): ?>
   <a class="button" href=<?=base_url().'index_portal.php/login/logout'?>>Logout</a>
      <?php endif; echo "\n";?>
-  </div>
+  </div> <!-- toolbar-->
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
 
-			<?php foreach($content as $segment): ?>
-				<?php $segment_data['data'] = $segment['data'];?>
-				<?php $this->load->view($segment['view'], $segment_data);?>
-			<?php endforeach;?>
-			
-<?php echo "\n";?>
+    <?php foreach($content as $segment): ?>
+      <?php $segment_data['data'] = $segment['data'];?>
+      <?php $this->load->view($segment['view'], $segment_data);?>
+    <?php endforeach;?>
 
-  </div>
+    <?php echo "\n";?>
+
+  </div> <!-- content-->
   
   <!-- Footer
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -76,7 +76,7 @@
   ::  <?php echo anchor('menu/', $this->lang->line('p_home'));echo "\n";?>
   ::  <?php echo anchor('help/'.strtolower(str_replace(' ','_',$page_title)), $this->lang->line('p_help'));echo "\n";?>  ::  <?php echo anchor('contact', $this->lang->line('f_contact'));echo "\n";?>  ::
     </p>
-  </div>
+  </div> <!-- footer-->
 <?php endif; ?>
 
 <p style="float:left;"><img src="<?=base_url()?>system/application/images/arkay-logo-on-aliceblue.png" width="200" height="57" alt="Arkay Packaging Logo" /></p>

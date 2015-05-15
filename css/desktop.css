@@ -86,49 +86,60 @@ img
 	border: 1;
 }
 
+#login-container{
+  background-image: url("corner-stone-opac.jpg");
+	background-size: cover;
+	background-position: center;
+}
 fieldset {
     border: ridge 1px rgb(111, 135, 168);
-    line-height: 2.8em;
+    line-height: 1.8em;
     margin: 0 1em;
     background-color: #aliceblue;
+    padding: 1em;
 }
 
 legend{
-    border: ridge 1px aliceblue;
     padding: 1em .5em;
-    background-color: aliceblue;
     color: rgb(111, 135, 168);
-    margin-left: 1em;
-    margin-bottom: 3em;
-    //font: bold 110% Georgia, "Times New Roman", Times, serif;
+    line-height: 1.1em;
+    font-weight: 700;
+    font-size: 130%;
 }
 
 .entry-field {
 	margin-left: 1em;
-	padding: .15em .25em;
-	font: bold 138.5% Courier, sans-serif;
+	font: bold 130% Courier, monospace;
 }
 
 .entry-label {
-	//font: bold 110%  Georgia, "Times New Roman", Times, serif;
-	margin: .2em;
-	padding: 1em;
+	margin-left: 1em;
 	color: rgb(111, 135, 168);
 }
 
-.submit-button {
-	//font: bold 110%  Georgia, "Times New Roman", Times, serif;
-	text-align: center;
-	margin: .5em 2.5em;
-	float: right;
+input#login_btn{
+  font-weight: 700;
+  font-size: 110%;
+  background-color: white;
 }
 
+#pwd{
+  text-align: center;
+  //margin-right: 40px;
+}
 .checkbox {
 	//font: bold 100%  Georgia, "Times New Roman", Times, serif;
 	padding: .75em;
 	margin-top: .5em;
 	margin-right: .5em;
-	margin-left: 3.5em;
+	margin-left: 5em;
+}
+
+.version{
+  font-size: 90%;
+  font-weight: 300;
+  display: block;
+  clear: right;
 }
 
 #footer {

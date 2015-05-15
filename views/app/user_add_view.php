@@ -21,8 +21,8 @@
 				'name'        => 'username',
 				'id'          => 'username',
 				'value'       => set_value('username'),
-				'maxlength'   => '20',
-				'size'        => '9',
+				'maxlength'   => '60',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -37,7 +37,7 @@
 				'id'          => 'password',
 				'value'       => '',
 				'maxlength'   => '16',
-				'size'        => '10',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -53,7 +53,7 @@
 				'id'          => 'passwordcf',
 				'value'       => '',
 				'maxlength'   => '16',
-				'size'        => '10',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -69,7 +69,7 @@
 				'id'          => 'email',
 				'value'       => set_value('email'),
 				'maxlength'   => '80',
-				'size'        => '20',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -106,7 +106,22 @@
 		<?=form_input($attributes); ?>
 		</p>
 		
-    <br />
+		<p>
+		<?=form_label('Warehouse Mgr:', 'wms_indicator', $attributes_label);?>
+
+			<?php $attributes = array(
+				'name'        => 'wms_indicator',
+				'id'          => 'wms_indicator',
+				'value'       => '0',
+				'maxlength'   => '1',
+				'size'        => '1',
+				'class'       => 'entry-field', 
+				);
+			?>
+		<?=form_input($attributes); ?>
+		</p>
+    
+    <br>
            
 		<?php $attributes = array(
 			'name'        => 'save_btn',

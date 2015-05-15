@@ -34,8 +34,8 @@
 				'name'        => 'username',
 				'id'          => 'username',
 				'value'       => $row->user_name,
-				'maxlength'   => '20',
-				'size'        => '9',
+				'maxlength'   => '60',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -50,7 +50,7 @@
 				'id'          => 'password',
 				'value'       => '',
 				'maxlength'   => '16',
-				'size'        => '10',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -66,7 +66,7 @@
 				'id'          => 'passwordcf',
 				'value'       => '',
 				'maxlength'   => '16',
-				'size'        => '10',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -82,7 +82,7 @@
 				'id'          => 'email',
 				'value'       => $row->email,
 				'maxlength'   => '80',
-				'size'        => '20',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>

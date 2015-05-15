@@ -34,10 +34,10 @@ class Login extends CI_Controller {
 		$data['display_logout'] = 'hide';
 		$data['message'] = $this->message;
 		$data['content'] = array(
-																array (
-																	'view' => 'app/message_view',
-																	'data' => 'Your information now.',
-																),
+																//array (
+																	//'view' => 'app/message_view',
+																	//'data' => 'Your information now.', 
+                                  //),
 																
 																array (
 																	'view' => 'app/login_view',
@@ -61,7 +61,7 @@ class Login extends CI_Controller {
 		$this->load->model('user_model');
 		if($this->user_model->validate($_POST, $this->css_style, $this->template))
 		{
-			redirect('menu/index/'.$_POST['username']);
+			redirect('menu/index/'.urlencode($_POST['username']));
 		} else {
 			$this->session->set_flashdata('alert', '<div id="alert" class="flash-msg">User name or password incorrect.<br />Please try again</div>');
 			redirect('login/index/');
@@ -73,7 +73,7 @@ class Login extends CI_Controller {
 		$was_user = str_replace(' ','_',$this->session->userdata('username'));
 		$this->message = '<div id="alert"><h3 style="color:blue;">Thanks for stopping by '.$this->session->userdata('username').'.<br />Please login to continue:</h3></div>';
 		$this->session->sess_destroy();
-		redirect('login/relogin/'.$was_user);
+		redirect('login/relogin/'.urlencode($was_user));
 	}
 		
 	function relogin($user = '')
@@ -89,7 +89,7 @@ class Login extends CI_Controller {
 		$data['content'] = array(
 																array (
 																	'view' => 'app/message_view',
-																	'data' => $user.' Logged Out',
+																	'data' => rawurldecode($user).' Logged Out',
 																),
 																
 																array (

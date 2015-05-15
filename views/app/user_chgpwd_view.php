@@ -30,7 +30,7 @@
 				'id'          => 'password',
 				'value'       => '',
 				'maxlength'   => '16',
-				'size'        => '10',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -46,7 +46,7 @@
 				'id'          => 'new_password',
 				'value'       => '',
 				'maxlength'   => '16',
-				'size'        => '10',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
@@ -62,7 +62,7 @@
 				'id'          => 'passwordcf',
 				'value'       => '',
 				'maxlength'   => '16',
-				'size'        => '10',
+				'size'        => '22',
 				'class'       => 'entry-field', 
 				);
 			?>
